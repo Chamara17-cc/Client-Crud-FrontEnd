@@ -1,0 +1,19 @@
+<div class="popup-form-container" *ngIf="isVisible">
+    <div class="popup-form">
+      <h2> <i class="fas fa-user-plus" style="color: #11de85;"></i>&nbsp; Add New Client </h2>
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name:</label>
+        <input id="name" formControlName="name" type="text" />
+  
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email" />
+  
+        <label for="phone">Phone:</label>
+        <input id="phone" formControlName="phone" type="tel" />
+  
+        <button type="submit" [disabled]="clientForm.invalid">Submit</button>
+        <button type="button" (click)="closePopup()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  
