@@ -1,0 +1,24 @@
+<div class="page-container">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="brand-name"><i class="fas fa-cloud" style="color: #11de85;"></i> CLIENTBASE</a>
+        <ul class="nav-menu">
+          <button class="btn" (click)="showPopup()"><i class="fas fa-user-plus"></i> New Client </button>
+        </ul>
+      </div>
+    </nav>
+    
+      <div class="content">
+        <app-side-panal (clientSelected)="onClientSelected($event)"></app-side-panal>
+    <app-details-view *ngIf="selectedClientId !== undefined" [clientId]="selectedClientId!"></app-details-view>
+      </div>
+      
+    
+      <footer class="footer">
+        <p>&copy; 2024 CLIENTBASE. All rights reserved.</p>
+      </footer>
+    
+    </div>
+
+    <app-popup-form #popupForm (formClosed)="onFormClosed()"></app-popup-form>
+  

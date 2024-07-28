@@ -1,0 +1,20 @@
+
+<div class="content" *ngIf="client">
+    <h1>Client Details </h1>
+    <img src="../../../assets/Icons/user.png" class="profile-picture">
+    <div class="rows">
+      <h2>Name: {{ client.name }}</h2>
+      <h2>Contact: {{ client.contact }}</h2>
+      <h2>Age: {{ client.age }}</h2>
+      <h2>Salary: {{ client.salary }}</h2>
+      <h2>Address: {{ client.address }}</h2>
+    </div>
+    <div class="buttons">
+      <button class="btn edit-btn" (click)="showPopup()">Edit</button>
+      <button class="btn delete-btn" (click)="confirmDelete()">Delete</button>
+    </div>
+  </div>
+  <app-update-form #popupForm (formClosed)="onFormClosed()"></app-update-form>
+  <div *ngIf="!client">
+    <p>No client details available.</p>
+  </div>
