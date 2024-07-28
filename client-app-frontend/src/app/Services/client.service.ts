@@ -24,6 +24,10 @@ export class ClientService {
     return this.http.get<Client[]>(this.baseUrl);
   }*/
 
+  deleteClient(clientId: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/clients/${clientId}`);
+  }
+
   getClients(): Observable<Client[]> {
     return of(MOCK_CLIENTS);
   }

@@ -11,7 +11,7 @@
     </div>
     <div class="buttons">
       <button class="btn edit-btn" (click)="showPopup()">Edit</button>
-      <button class="btn delete-btn">Delete</button>
+      <button class="btn delete-btn" (click)="confirmDelete()">Delete</button>
     </div>
   </div>
   <app-update-form #popupForm (formClosed)="onFormClosed()"></app-update-form>

@@ -11,6 +11,7 @@ import { PopupFormComponent } from './Components/popup-form/popup-form.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateFormComponent } from './Components/update-form/update-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './Pages/welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     SidePanalComponent,
     DetailsViewComponent,
     PopupFormComponent,
-    UpdateFormComponent
+    UpdateFormComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

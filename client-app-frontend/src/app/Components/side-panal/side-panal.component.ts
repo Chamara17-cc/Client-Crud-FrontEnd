@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class SidePanalComponent implements OnInit {
   clients: Client[] = [];
   isLoading: boolean = true;
+  selectedClientId: number | null = null; // Track selected client
 
   @Output() clientSelected = new EventEmitter<number>();
 
@@ -29,6 +30,7 @@ export class SidePanalComponent implements OnInit {
   }
 
   selectClient(clientId: number): void {
+    this.selectedClientId = clientId; // Set the selected client
     this.clientSelected.emit(clientId);
     this.router.navigate(['/Home/details', clientId]);
   }

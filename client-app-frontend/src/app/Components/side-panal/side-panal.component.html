@@ -1,16 +1,16 @@
 <div class="side-panel">
-    <div >
-      <div *ngIf="isLoading">
-        <p>Loading...</p>
-      </div>
-      <div *ngIf="!isLoading && clients.length === 0">
-        <p>No clients to display.</p>
-      </div>
-      <div *ngIf="!isLoading && clients.length > 0">
-        <div *ngFor="let client of clients"  class="client" (click)="selectClient(client.id)">
-          <img src="../../../assets/Icons/user.png" class="profile-picture">
-          <span >{{ client.name }}</span>
-        </div>
+  <div>
+    <div *ngIf="isLoading">
+      <p>Loading...</p>
+    </div>
+    <div *ngIf="!isLoading && clients.length === 0">
+      <p>No clients to display.</p>
+    </div>
+    <div *ngIf="!isLoading && clients.length > 0">
+      <div *ngFor="let client of clients" [ngClass]="{'selected': client.id === selectedClientId}" class="client" (click)="selectClient(client.id)">
+        <img src="../../../assets/Icons/user.png" class="profile-picture">
+        <span class="client-name">{{ client.name }}</span>
       </div>
     </div>
   </div>
+</div>

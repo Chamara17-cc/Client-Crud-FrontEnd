@@ -46,4 +46,31 @@ export class DetailsViewComponent implements OnInit, OnChanges {
   onFormClosed(): void {
     console.log('Popup form closed');
   }
+
+  confirmDelete(): void {
+    if (confirm('Are you sure you want to delete this client?')) {
+      this.deleteClient();
+    }
+  }
+
+  deleteClient(): void {
+    if (confirm('Are you sure you want to delete this client?')) {
+      if (this.client && this.client.id !== undefined) {
+        this.clientService.deleteClient(this.client.id).subscribe(
+          () => {
+            console.log('Client deleted successfully');
+            this.client = undefined;
+          },
+          (error) => {
+            console.error('Error deleting client', error);
+          }
+        );
+      }
+    }
+  }
+
+
+
+
+
 }
